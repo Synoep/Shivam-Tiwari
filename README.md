@@ -19,10 +19,7 @@ Live Link: <a href="https://www.Shivam Tiwari.com/" >ShivamTiwari.com</a>
 - Styled using **Tailwind CSS**
 - Written in **TypeScript**
 
-## Known Issues
 
-1. ~Code needs a rewrite
-2. ~Rewrite Mobile View responsiveness code
 
 ## Running Locally
 
