@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import { useState } from "react";
-import { Scrollbars } from "react-custom-scrollbars";
+import { Scrollbars } from "react-custom-scrollbars-2";
 import { useMediaQuery } from "react-responsive";
 import Head from "next/head";
 
