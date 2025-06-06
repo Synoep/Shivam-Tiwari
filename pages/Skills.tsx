@@ -48,20 +48,20 @@ const Skills: NextPage = () => {
               <div className="relative">
                 <dt>
                   <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-white text-white">
-                    <img src="https://img.icons8.com/color/144/000000/javascript--v1.png" />
+                    <img src="https://img.icons8.com/color/144/000000/c-plus-plus-logo.png" />
                   </div>
                   <p className="ml-16 text-lg leading-6 font-medium pt-3 text-gray-100">
-                    JavaScript
+                    C++
                   </p>
                 </dt>
               </div>
               <div className="relative">
                 <dt>
                   <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-white text-white">
-                    <img src="https://img.icons8.com/color/96/000000/typescript.png" />
+                    <img src="https://img.icons8.com/color/144/000000/java-coffee-cup-logo.png" />
                   </div>
                   <p className="ml-16 text-lg leading-6 font-medium pt-3 text-gray-100">
-                    TypeScript
+                    Java
                   </p>
                 </dt>
               </div>
@@ -83,6 +83,40 @@ const Skills: NextPage = () => {
               Full-Stack Development
             </p>
             <dl className="space-y-10 mt-4 md:space-y-0 md:grid md:grid-cols-2 xl:grid-cols-5 lg:grid-cols-3 sm:grid-cols-1 xs:grid-cols-1 md:gap-x-8 md:gap-y-10">
+              <div className="relative">
+                <dt>
+                  <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-white text-white">
+                    <img src="https://img.icons8.com/color/144/000000/javascript--v1.png" />
+                  </div>
+                  <p className="ml-16 text-lg leading-6 font-medium pt-3 text-gray-100">
+                    JavaScript
+                  </p>
+                </dt>
+              </div>
+              <div className="relative">
+                <dt>
+                  <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-white text-white">
+                    <img src="https://img.icons8.com/color/96/000000/typescript.png" />
+                  </div>
+                  <p className="ml-16 text-lg leading-6 font-medium pt-3 text-gray-100">
+                    TypeScript
+                  </p>
+                </dt>
+              </div>
+              <div className="relative">
+                <dt>
+                  <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-white text-white">
+                    <img 
+                      src="/rescript.png"
+                      alt="ReScript"
+                      style={{ width: '80%', height: '80%' }}
+                    />
+                  </div>
+                  <p className="ml-16 text-lg leading-6 font-medium pt-3 text-gray-100">
+                    ReScript
+                  </p>
+                </dt>
+              </div>
               <div className="relative">
                 <dt>
                   <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-white text-white">
@@ -156,6 +190,19 @@ const Skills: NextPage = () => {
                   </div>
                   <p className="ml-16 text-lg leading-6 font-medium pt-3 text-gray-100">
                     JQuery
+                  </p>
+                </dt>
+              </div>
+              <div className="relative">
+                <dt>
+                  <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-white text-white">
+                    <img
+                      src="https://img.icons8.com/color/144/000000/flask.png"
+                      width="80%"
+                    />
+                  </div>
+                  <p className="ml-16 text-lg leading-6 font-medium pt-3 text-gray-100">
+                    Flask
                   </p>
                 </dt>
               </div>
@@ -269,19 +316,6 @@ const Skills: NextPage = () => {
                   </div>
                   <p className="ml-16 text-lg leading-6 font-medium pt-3 text-gray-100">
                     GitHub
-                  </p>
-                </dt>
-              </div>
-              <div className="relative">
-                <dt>
-                  <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-white text-white">
-                    <img
-                      src="https://img.icons8.com/color/144/000000/bitbucket.png"
-                      width="80%"
-                    />
-                  </div>
-                  <p className="ml-16 text-lg leading-6 font-medium pt-3 text-gray-100">
-                    Bitbucket
                   </p>
                 </dt>
               </div>
