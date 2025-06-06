@@ -2,6 +2,7 @@ import { NextPage } from "next";
 import { Scrollbars } from "react-custom-scrollbars-2";
 import Head from "next/head";
 import { useMediaQuery } from "react-responsive";
+import { motion } from "framer-motion";
 
 const Experience: NextPage = () => {
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 943px)" });
@@ -44,6 +45,27 @@ const Experience: NextPage = () => {
     }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5
+      }
+    }
+  };
+
   return (
     <Scrollbars
       autoHide
@@ -75,54 +97,77 @@ const Experience: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="twitter:widgets:csp" content="on" />
       </Head>
-      <div className="mt-2 w-full p-2 ml-1 text-left">
-        <h2 className="lg:text-5xl pl-5 pb-2 font-bold leading-tight text-indigo-500 text-3xl">
-          Experience
-        </h2>
-        <p className="font-medium pl-5 pb-2 text-gray-400 text-md pt-1 w-4/5">
-          My professional journey and work history.
-        </p>
-        <div className="w-full mt-3 mb-5 pb-5">
-          {experiences.map((exp, index) => (
-            <div
-              key={index}
-              className={`mb-8 relative ${
-                !isTabletOrMobile ? "pl-8" : "pl-4"
-              }`}
-            >
-              {!isTabletOrMobile && (
-                <div className="absolute left-0 top-0 w-4 h-4 rounded-full bg-indigo-500"></div>
-              )}
-              <div className="bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-                  <div>
-                    <h3 className="text-2xl font-bold text-white mb-1">
-                      {exp.company}
-                    </h3>
-                    <p className="text-indigo-400 font-medium">{exp.role}</p>
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500 mb-4">
+              Experience
+            </h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              My professional journey and work history, showcasing my growth and expertise in software development.
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="space-y-8"
+          >
+            {experiences.map((exp, index) => (
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                className={`relative ${!isTabletOrMobile ? "pl-8" : "pl-4"}`}
+              >
+                {!isTabletOrMobile && (
+                  <div className="absolute left-0 top-0 w-4 h-4 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 transform hover:scale-125 transition-transform duration-300"></div>
+                )}
+                <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-10 shadow-2xl hover:shadow-xl hover:shadow-purple-500/50 transition-all duration-300 border border-gray-700/50">
+                  <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-6">
+                    <div>
+                      <h3 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400 mb-2">
+                        {exp.company}
+                      </h3>
+                      <p className="text-indigo-300 font-medium text-lg">{exp.role}</p>
+                    </div>
+                    <p className="text-gray-400 mt-2 md:mt-0 text-lg font-medium">{exp.period}</p>
                   </div>
-                  <p className="text-gray-400 mt-2 md:mt-0">{exp.period}</p>
+                  <ul className="space-y-4 mb-6 list-disc pl-5">
+                    {exp.achievements.map((achievement, i) => (
+                      <motion.li
+                        key={i}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: i * 0.1 }}
+                        className="text-gray-300 text-lg leading-relaxed"
+                      >
+                        {achievement}
+                      </motion.li>
+                    ))}
+                  </ul>
+                  <div className="flex flex-wrap gap-3">
+                    {exp.tech.map((tech, i) => (
+                      <motion.span
+                        key={i}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: i * 0.1 }}
+                        className="px-4 py-2 text-sm font-medium text-indigo-400 bg-indigo-900/30 rounded-full border border-indigo-500/30 hover:bg-indigo-900/50 transition-colors duration-300"
+                      >
+                        {tech}
+                      </motion.span>
+                    ))}
+                  </div>
                 </div>
-                <ul className="list-disc list-inside space-y-2 mb-4">
-                  {exp.achievements.map((achievement, i) => (
-                    <li key={i} className="text-gray-300">
-                      {achievement}
-                    </li>
-                  ))}
-                </ul>
-                <div className="flex flex-wrap gap-2">
-                  {exp.tech.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1 text-sm font-medium text-indigo-500 bg-indigo-100 rounded-full"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </Scrollbars>

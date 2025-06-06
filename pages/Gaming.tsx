@@ -59,7 +59,7 @@ const Gaming: NextPage = () => {
         <meta name="twitter:widgets:csp" content="on" />
       </Head>
       {!isTabletOrMobile ? (
-        <article className="ml-3 text-left bg-app bg-center bg-no-repeat bg-cover ">
+        <article className="ml-3 text-left bg-app bg-center bg-no-repeat bg-cover flex-grow ">
           <section className="pr-5  pt-10">
             <div className="animeplayer pr-3 pt-3">
               {play ? (
@@ -173,7 +173,7 @@ const Gaming: NextPage = () => {
           </section>
         </article>
       ) : (
-        <article className="text-left bg-app bg-center bg-no-repeat bg-cover ">
+        <article className="text-left bg-app bg-center bg-no-repeat bg-cover flex-grow ">
           <section className="  pt-10">
             <div className="animeplayer pr-3 pt-3">
               {play ? (

@@ -65,27 +65,27 @@ const Layout: React.FC = ({ children, visitorsCount }: any) => {
           <img
             src="https://img.icons8.com/color/96/000000/visual-studio-code-2019.png"
             alt="Visual Studio Code Styled Portofolio Icon"
-            width="60"
-            height="60"
+            width="800"
+            height="800"
           />
         </div>
         <ul className="header-menu">
-          <li className="header-menu-link">
+          <li className="header-menu-link hover:text-white hover:underline text-5xl mr-8">
             <Link href="/">About</Link>
           </li>
-          <li className="header-menu-link">
+          <li className="header-menu-link hover:text-white hover:underline text-5xl mr-8">
             <Link href="/Experience">Experience</Link>
           </li>
-          <li className="header-menu-link">
+          <li className="header-menu-link hover:text-white hover:underline text-5xl mr-8">
             <Link href="/Skills">Skills</Link>
           </li>
-          <li className="header-menu-link">
+          <li className="header-menu-link hover:text-white hover:underline text-5xl mr-8">
             <Link href="/Projects">Projects</Link>
           </li>
-          <li className="header-menu-link">
+          <li className="header-menu-link hover:text-white hover:underline text-5xl mr-8">
             <Link href="/Email">Contact</Link>
           </li>
-          <li className="header-menu-link">
+          <li className="header-menu-link hover:text-white hover:underline text-5xl">
             <Link href="/Hobbies">Hobbies</Link>
           </li>
         </ul>

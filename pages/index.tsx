@@ -185,7 +185,7 @@ const Home: NextPage = () => {
                   <Link
                     passHref
                     target="_blank"
-                    href="https://www.linkedin.com/in/savaliya-raj"
+                    href="https://www.linkedin.com/in/shivam-tiwari-b26b29278/"
                   >
                     <div
                       className="cursor-pointer w-full flex justify-start items-center pl-2 pr-2 p-1 
@@ -203,7 +203,7 @@ const Home: NextPage = () => {
                   </Link>
                 </div>
                 <div className="mt-4">
-                  <Link passHref target="_blank" href="https://github.com/SRX9">
+                  <Link passHref target="_blank" href="https://github.com/Synoep">
                     <div
                       className="cursor-pointer w-full flex justify-start items-center pl-2 pr-2 p-1 
                         rounded-sm gap-2 border-b  border-blue-500 "
