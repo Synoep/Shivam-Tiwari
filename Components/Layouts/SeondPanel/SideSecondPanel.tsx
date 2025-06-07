@@ -32,7 +32,9 @@ export const SideSecondPanel: React.FC<IProps> = (props: any) => {
     } else if (currentSubLink === "Skills") {
       setActiveCurrentSubLink("skills.js");
     } else if (currentSubLink === "Projects") {
-      setActiveCurrentSubLink("projects.ts");
+      setActiveCurrentSubLink("Projects.ts");
+    } else if (currentSubLink === "Achievements") {
+      setActiveCurrentSubLink("Achievements.ts");
     } else if (currentSubLink === "1") {
       setActiveCurrentSubLink("1");
     } else if (currentSubLink === "2") {
@@ -61,6 +63,8 @@ export const SideSecondPanel: React.FC<IProps> = (props: any) => {
       setActiveCurrentSubLink("Learning");
     } else if (currentSubLink === "Startup") {
       setActiveCurrentSubLink("Startup");
+    } else if (currentSubLink === "0") {
+      setActiveCurrentSubLink("0");
     }
   }, [isMounted]);
 
@@ -91,11 +95,11 @@ export const SideSecondPanel: React.FC<IProps> = (props: any) => {
                       isTabletOrMobile ? props.closeSideMenu() : null;
                     }}
                     className={` smallSide ${
-                      activeCurrentSubLink === "index.html" ? "active" : ""
+                      activeCurrentSubLink === "Index.html" ? "active" : ""
                     }`}
                   >
                     <SidePanelSubLink
-                      name="index.html"
+                      name="Index.html"
                       link="/"
                       icon={<span className="icons8-html-5"></span>}
                     />
@@ -106,11 +110,11 @@ export const SideSecondPanel: React.FC<IProps> = (props: any) => {
                       isTabletOrMobile ? props.closeSideMenu() : null;
                     }}
                     className={` smallSide ${
-                      activeCurrentSubLink === "experience.css" ? "active" : ""
+                      activeCurrentSubLink === "Experience.css" ? "active" : ""
                     }`}
                   >
                     <SidePanelSubLink
-                      name="experience.css"
+                      name="Experience.css"
                       link="/Experience"
                       icon={<span className="icons8-css3"></span>}
                     />
@@ -121,11 +125,11 @@ export const SideSecondPanel: React.FC<IProps> = (props: any) => {
                       isTabletOrMobile ? props.closeSideMenu() : null;
                     }}
                     className={` smallSide ${
-                      activeCurrentSubLink === "skills.js" ? "active" : ""
+                      activeCurrentSubLink === "Skills.js" ? "active" : ""
                     }`}
                   >
                     <SidePanelSubLink
-                      name="skills.js"
+                      name="Skills.js"
                       link="/Skills"
                       icon={<span className="icons8-javascript"></span>}
                     />
@@ -136,13 +140,28 @@ export const SideSecondPanel: React.FC<IProps> = (props: any) => {
                       isTabletOrMobile ? props.closeSideMenu() : null;
                     }}
                     className={`smallSide ${
-                      activeCurrentSubLink === "projects.ts" ? "active" : ""
+                      activeCurrentSubLink === "Projects.ts" ? "active" : ""
                     }`}
                   >
                     <SidePanelSubLink
-                      name="projects.ts"
+                      name="Projects.ts"
                       link="/Projects"
                       icon={<span className="icons8-typescript"></span>}
+                    />
+                  </li>
+                  <li
+                    onClick={() => {
+                      router.push("/Achievements");
+                      isTabletOrMobile ? props.closeSideMenu() : null;
+                    }}
+                    className={`smallSide ${
+                      activeCurrentSubLink === "Achievements.ts" ? "active" : ""
+                    }`}
+                  >
+                    <SidePanelSubLink
+                      name="Achievements.ts"
+                      link="/Achievements"
+                      icon={<span className="icons8-react"></span>}
                     />
                   </li>
                 </ul>
@@ -159,11 +178,26 @@ export const SideSecondPanel: React.FC<IProps> = (props: any) => {
               <div className="myweight flex-min topPadd">
                 {!projectsClose ? <DownIcon /> : <RightIcon />}
               </div>
-              <span className="myweight flex-auto">Side Projects</span>
+              <span className="myweight flex-auto">Projects</span>
             </div>
             {!projectsClose && (
               <div className="show-pre">
                 <ul>
+                  <li
+                    onClick={() => {
+                      router.push("/Projects/0");
+                      isTabletOrMobile ? props.closeSideMenu() : null;
+                    }}
+                    className={` smallSide ${
+                      activeCurrentSubLink === "0" ? "active" : ""
+                    }`}
+                  >
+                    <SidePanelSubLink
+                      name="CampusConnect.jsx"
+                      link="/Projects/0"
+                      icon={<span className="icons8-nodejs"></span>}
+                    />
+                  </li>
                   <li
                     onClick={() => {
                       router.push("/Projects/1");
@@ -174,9 +208,9 @@ export const SideSecondPanel: React.FC<IProps> = (props: any) => {
                     }`}
                   >
                     <SidePanelSubLink
-                      name="Ayedot.js"
+                      name="Medisen.js"
                       link="/Projects/1"
-                      icon={<span className="icons8-nodejs"></span>}
+                      icon={<span className="icons8-react"></span>}
                     />
                   </li>
                   <li
@@ -189,9 +223,9 @@ export const SideSecondPanel: React.FC<IProps> = (props: any) => {
                     }`}
                   >
                     <SidePanelSubLink
-                      name="Ayefan.js"
+                      name="DeribitTradingSystem.cpp"
                       link="/Projects/2"
-                      icon={<span className="icons8-react"></span>}
+                      icon={<span className="icons8-angularjs"></span>}
                     />
                   </li>
                   <li
@@ -204,9 +238,9 @@ export const SideSecondPanel: React.FC<IProps> = (props: any) => {
                     }`}
                   >
                     <SidePanelSubLink
-                      name="Onwos.ts"
+                      name="MultiAgentAISystem.py"
                       link="/Projects/3"
-                      icon={<span className="icons8-angularjs"></span>}
+                      icon={<span className="icons8-react"></span>}
                     />
                   </li>
                   <li
@@ -219,39 +253,9 @@ export const SideSecondPanel: React.FC<IProps> = (props: any) => {
                     }`}
                   >
                     <SidePanelSubLink
-                      name="fireflow.js"
+                      name="BitcoinHub.tsx"
                       link="/Projects/4"
-                      icon={<span className="icons8-react"></span>}
-                    />
-                  </li>
-                  <li
-                    onClick={() => {
-                      router.push("/Projects/5");
-                      isTabletOrMobile ? props.closeSideMenu() : null;
-                    }}
-                    className={` smallSide ${
-                      activeCurrentSubLink === "5" ? "active" : ""
-                    }`}
-                  >
-                    <SidePanelSubLink
-                      name="Shortlit.js"
-                      link="/Projects/5"
                       icon={<span className="icons8-nodejs"></span>}
-                    />
-                  </li>
-                  <li
-                    onClick={() => {
-                      router.push("/Projects/6");
-                      isTabletOrMobile ? props.closeSideMenu() : null;
-                    }}
-                    className={` smallSide ${
-                      activeCurrentSubLink === "6" ? "active" : ""
-                    }`}
-                  >
-                    <SidePanelSubLink
-                      name="Xport.js"
-                      link="/Projects/6"
-                      icon={<span className="icons8-react"></span>}
                     />
                   </li>
                 </ul>

@@ -83,6 +83,9 @@ const Layout: React.FC = ({ children, visitorsCount }: any) => {
             <Link href="/Projects">Projects</Link>
           </li>
           <li className="header-menu-link hover:text-white hover:underline text-5xl mr-8">
+            <Link href="/Achievements">Achievements</Link>
+          </li>
+          <li className="header-menu-link hover:text-white hover:underline text-5xl mr-8">
             <Link href="/Email">Contact</Link>
           </li>
           <li className="header-menu-link hover:text-white hover:underline text-5xl">
