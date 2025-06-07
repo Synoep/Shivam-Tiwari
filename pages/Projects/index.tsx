@@ -42,120 +42,124 @@ const Projects: NextPage = (props: any) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="twitter:widgets:csp" content="on" />
       </Head>
-      <div className="mt-2 w-full p-2 ml-1 text-left">
-        <h2 className="lg:text-5xl pl-5 pb-2 font-bold leading-tight text-indigo-500 text-3xl">
-          My Projects
-        </h2>
-        <p className="font-medium pl-5 pb-2 text-gray-400 text-md pt-1 w-4/5">
-          A showcase of my development projects and work.
-        </p>
-        {!isTabletOrMobile ? (
-          <div className="w-full mt-3 mb-5 pb-5 grid grid-cols-1s xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 xs:grid-cols-1">
-            {props?.projects?.map((obj: any, index: number) => (
-              <div className="mb-4 p-3" key={index}>
-                <div className="w-full rounded-xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl hover:scale-105 transform transition-all duration-500">
-                  <Link href={`/Projects/${index + 1}`}>
-                    <div>
-                      <div className="pr-3 pl-3">
-                        <Image
-                          className="rounded-xl"
-                          src={obj.banner}
-                          alt={`${obj.name} project banner`}
-                          width="500"
-                          height="270"
-                        />
-                      </div>
-                      <div className="flex justify-between pr-3 pt-2 pl-3 pb-2">
-                        <div className="flex items-center space-x-4">
+      <div className="w-full h-full overflow-auto">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="mt-2 w-full p-2 text-center">
+            <h2 className="lg:text-5xl pb-2 font-bold leading-tight text-indigo-500 text-3xl">
+              My Projects
+            </h2>
+            <p className="font-medium pb-2 text-gray-400 text-md pt-1 max-w-4/5 mx-auto">
+              A showcase of my development projects and work.
+            </p>
+          </div>
+          {!isTabletOrMobile ? (
+            <div className="w-full mt-3 mb-5 pb-5 grid grid-cols-1s xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 xs:grid-cols-1">
+              {props?.projects?.map((obj: any, index: number) => (
+                <div className="mb-4 p-3" key={index}>
+                  <div className="w-full rounded-xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl hover:scale-105 transform transition-all duration-500">
+                    <Link href={`/Projects/${index + 1}`}>
+                      <div>
+                        <div className="pr-3 pl-3">
                           <Image
-                            className="h-10 w-10 rounded-full"
-                            src={obj.logo}
-                            alt={`${obj.name} logo`}
-                            width="35"
-                            height="35"
+                            className="rounded-xl"
+                            src={obj.banner}
+                            alt={`${obj.name} project banner`}
+                            width={500}
+                            height={270}
                           />
-                          <div>
-                            <h1 className="text-lg text-gray-100 font-bold">
-                              {obj.name}
-                            </h1>
-                            <p className="font-medium text-gray-400 text-sm pt-1">
-                              {obj.title}
-                            </p>
+                        </div>
+                        <div className="flex justify-between pr-3 pt-2 pl-3 pb-2">
+                          <div className="flex items-center space-x-4">
+                            <Image
+                              className="h-10 w-10 rounded-full"
+                              src={obj.logo}
+                              alt={`${obj.name} logo`}
+                              width={35}
+                              height={35}
+                            />
+                            <div>
+                              <h1 className="text-lg text-gray-100 font-bold">
+                                {obj.name}
+                              </h1>
+                              <p className="font-medium text-gray-400 text-sm pt-1">
+                                {obj.title}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="px-3 pb-3">
+                          <div className="flex flex-wrap gap-2">
+                            {obj.tech.map((tech: string, i: number) => (
+                              <span
+                                key={i}
+                                className="px-2 py-1 text-xs font-medium text-indigo-500 bg-indigo-100 rounded-full"
+                              >
+                                {tech}
+                              </span>
+                            ))}
                           </div>
                         </div>
                       </div>
-                      <div className="px-3 pb-3">
-                        <div className="flex flex-wrap gap-2">
-                          {obj.tech.map((tech: string, i: number) => (
-                            <span
-                              key={i}
-                              className="px-2 py-1 text-xs font-medium text-indigo-500 bg-indigo-100 rounded-full"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div className="w-full mt-3 pb-60 grid grid-cols-1s xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 xs:grid-cols-1">
-            {props?.projects?.map((obj: any, index: number) => (
-              <div className="mb-5" key={index}>
-                <div className="w-full rounded-xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl hover:scale-105 transform transition-all duration-500">
-                  <Link href={`/Projects/${index + 1}`}>
-                    <div>
-                      <div className="">
-                        <Image
-                          className="rounded-xl"
-                          src={obj.banner}
-                          alt={`${obj.name} project banner`}
-                          width="500"
-                          height="270"
-                        />
-                      </div>
-                      <div className="flex justify-between pr-3 pt-1 pl-3 pb-2">
-                        <div className="flex items-center space-x-4">
+              ))}
+            </div>
+          ) : (
+            <div className="w-full mt-3 pb-60 grid grid-cols-1s xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 xs:grid-cols-1">
+              {props?.projects?.map((obj: any, index: number) => (
+                <div className="mb-5" key={index}>
+                  <div className="w-full rounded-xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl hover:scale-105 transform transition-all duration-500">
+                    <Link href={`/Projects/${index + 1}`}>
+                      <div>
+                        <div className="">
                           <Image
-                            className="h-10 w-10 rounded-full"
-                            src={obj.logo}
-                            alt={`${obj.name} logo`}
-                            width="45"
-                            height="45"
+                            className="rounded-xl"
+                            src={obj.banner}
+                            alt={`${obj.name} project banner`}
+                            width={500}
+                            height={270}
                           />
-                          <div>
-                            <h1 className="text-lg text-gray-100 font-bold">
-                              {obj.name}
-                            </h1>
-                            <p className="font-medium text-gray-400 text-sm pt-1">
-                              {obj.title}
-                            </p>
+                        </div>
+                        <div className="flex justify-between pr-3 pt-1 pl-3 pb-2">
+                          <div className="flex items-center space-x-4">
+                            <Image
+                              className="h-10 w-10 rounded-full"
+                              src={obj.logo}
+                              alt={`${obj.name} logo`}
+                              width={45}
+                              height={45}
+                            />
+                            <div>
+                              <h1 className="text-lg text-gray-100 font-bold">
+                                {obj.name}
+                              </h1>
+                              <p className="font-medium text-gray-400 text-sm pt-1">
+                                {obj.title}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="px-3 pb-3">
+                          <div className="flex flex-wrap gap-2">
+                            {obj.tech.map((tech: string, i: number) => (
+                              <span
+                                key={i}
+                                className="px-2 py-1 text-xs font-medium text-indigo-500 bg-indigo-100 rounded-full"
+                              >
+                                {tech}
+                              </span>
+                            ))}
                           </div>
                         </div>
                       </div>
-                      <div className="px-3 pb-3">
-                        <div className="flex flex-wrap gap-2">
-                          {obj.tech.map((tech: string, i: number) => (
-                            <span
-                              key={i}
-                              className="px-2 py-1 text-xs font-medium text-indigo-500 bg-indigo-100 rounded-full"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        )}
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </Scrollbars>
   );

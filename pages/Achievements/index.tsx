@@ -1,5 +1,4 @@
 import { NextPage } from "next";
-import { Scrollbars } from "react-custom-scrollbars-2";
 import Head from "next/head";
 import { motion } from "framer-motion";
 
@@ -11,25 +10,33 @@ const Achievements: NextPage = () => {
     "Pupil at Codeforces",
     "3 star in CodeChef",
     "Solved Across 1000+ DSA Problems",
+    "U-19 National Softball Team Captain",
+    "4x National Player in Baseball and Softball",
   ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5
+      }
+    }
   };
 
   return (
-    <Scrollbars
-      autoHide
-      autoHideTimeout={1000}
-      autoHideDuration={200}
-      universal={true}
-    >
+    <>
       <Head>
         <title>Achievements - Shivam Tiwari</title>
         <meta
@@ -38,31 +45,43 @@ const Achievements: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="maincontainerprofileprojects w-full px-5 pt-0 pb-8">
-        <h2 className="lg:text-5xl pt-8 pb-4 font-bold leading-tight text-indigo-500 text-3xl">
-          My Achievements
-        </h2>
-        <p className="font-medium pt-2 pb-6 text-gray-400 text-md w-4/5">
-          Here are some of my notable achievements and accomplishments.
-        </p>
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
-          {achievementsList.map((achievement, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105"
-            >
-              <p className="text-gray-200 text-lg font-medium">{achievement}</p>
-            </motion.div>
-          ))}
-        </motion.div>
+      <div className="w-full h-full overflow-auto">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500 mb-4">
+              My Achievements
+            </h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              Here are some of my notable achievements and accomplishments.
+            </p>
+          </motion.div>
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            {achievementsList.map((achievement, index) => (
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                className="relative group"
+              >
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+                <div className="relative bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border border-gray-700/50 min-h-[120px] flex items-center">
+                  <p className="text-gray-200 text-lg font-medium w-full text-center">{achievement}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
       </div>
-    </Scrollbars>
+    </>
   );
 };
 

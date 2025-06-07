@@ -3,7 +3,7 @@ export const projectsdata = () => {
   return [
     {
       name: "CampusConnect",
-      title: "Networking Platform for College Tech Communities",
+      title: "A Personalized Tech Networking & Placement Journey Platform for College Students",
       banner: "/CampusConnect.png",
       logo: "/CampusConnect.png",
       description: [
@@ -12,13 +12,27 @@ export const projectsdata = () => {
         "Includes a chatbot for doubt clearance, a CP leaderboard, and real-time updates on tech events.",
         "Provides data-driven insights for placement cells to assess students beyond academics, ensuring optimized performance with efficient state management."
       ],
+      features: [
+        "Dynamic Roadmap Generator: Personalized learning and placement preparation plans, from beginner to advanced levels.",
+        "Placement Hub: Centralized access to college placement notifications, important dates, and eligibility criteria.",
+        "Placement Tips & Resources: Curated strategies and best practices to prepare for interviews, aptitude tests, and coding rounds.",
+        "AI-Powered Chatbot: Real-time doubt clearance and placement guidance using OpenAI integration.",
+        "Competitive Programming Leaderboard: Ranks students based on CP activity to promote skill development and visibility.",
+        "Real-Time Chat System: Enables seamless student-to-student and student-to-alumni communication.",
+        "Event & Resource Hub: Delivers tech event updates and supports document/project sharing.",
+        "Placement Analytics Dashboard: Offers data-driven insights to placement cells, highlighting students' technical growth beyond academics.",
+        "Secure Authentication: JWT-based auth with Supabase and protected routes.",
+        "Responsive UI: Mobile-first, animated UI using Tailwind CSS and Framer Motion."
+      ],
       tech: ["React", "Node.js","AI", "MongoDB","Tailwind","Typescript","Express.js","WebScraping","Python  "],
-      github: "https://github.com/yourusername/campusconnect",
-      live: null
+      snapshots: ["/CampusConnect.png", "/CampusConnect.png"], // Placeholder snapshots
+      github: "https://github.com/Synoep/Campus_Connect",
+      live: "https://campusconnect3.netlify.app/",
+      others: []
     },
     {
       name: "MEDISEN",
-      title: "Overall Disease Predictor",
+      title: "AI-Powered Disease Predictor with Specialist Mapping",
       banner: "/Medisen.png",
       logo: "/Medisen.png",
       description: [
@@ -29,7 +43,8 @@ export const projectsdata = () => {
       ],
       tech: ["Python", "Machine Learning", "Flask", "React", "MongoDB"],
       github: "https://github.com/yourusername/medisen",
-      live: null
+      live: null,
+      others: []
     },
     {
       name: "Deribit Trading System",
@@ -44,7 +59,8 @@ export const projectsdata = () => {
       ],
       tech: ["C++", "WebSocket", "Boost", "OpenSSL", "CMake"],
       github: "https://github.com/yourusername/deribit-trading",
-      live: null
+      live: null,
+      others: []
     },
     {
       name: "Multi-Agent AI System",
@@ -59,7 +75,8 @@ export const projectsdata = () => {
       ],
       tech: ["Python", "TensorFlow", "PyTorch", "Docker", "Kubernetes", "REST APIs"],
       github: "https://github.com/yourusername/multi-agent-ai",
-      live: null
+      live: null,
+      others: []
     },
     {
       name: "Bitcoin Hub",
@@ -74,7 +91,8 @@ export const projectsdata = () => {
       ],
       tech: ["React", "Redux","Java","Tailwind","Typescript"],
       github: "https://github.com/yourusername/bitcoin-hub",
-      live: null
+      live: null,
+      others: []
     }
   ];
 };
